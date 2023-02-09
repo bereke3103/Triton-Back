@@ -4,7 +4,7 @@ namespace TritonBack.Model
 {
     public class FeedbackModel
     {
-        [JsonIgnore]
+        
         public int Id { get; set; }
         public string Surname { get; set; }
         public string Name { get; set; }

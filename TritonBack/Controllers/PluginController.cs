@@ -67,16 +67,9 @@ namespace TritonBack.Controllers
         [HttpDelete("/deletePlugin/{id}")]
         public async Task<ActionResult> DeletePlugin(int id)
         {
-            var response = plugin.DeletePlugin(id);
+            await plugin.DeletePlugin(id);
 
-            if (response == null)
-            {
-                return Ok();
-            }
-            else
-            {
-                return BadRequest();
-            }
+            return Ok();
         }
     }
 }

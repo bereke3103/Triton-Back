@@ -12,6 +12,13 @@ namespace TritonBack.Service
         {
             this.context = context;
         }
+
+        public async Task<List<FeedbackModel>> GetFeedback()
+        {
+            var response = context.feedbacks.ToList();
+            return response;
+        }
+
         public async Task<FeedbackModel> PostFeedback(FeedbackModel feedback)
         {
             if (feedback == null)
@@ -47,5 +54,7 @@ namespace TritonBack.Service
             return feedbackPeson;
 
         }
+
+        
     }
 }

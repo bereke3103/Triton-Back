@@ -4,7 +4,7 @@ namespace TritonBack.Model
 {
     public class PluginInformationModel
     {
-        [JsonIgnore]
+        
         public int Id { get; set; }
         public string ItemInformation { get; set; }
       

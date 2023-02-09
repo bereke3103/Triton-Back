@@ -5,5 +5,7 @@ namespace TritonBack.Service.Interface
     public interface IFeedback
     {
         public Task<FeedbackModel> PostFeedback(FeedbackModel feedback);
+
+        public Task<List<FeedbackModel>> GetFeedback();
     }
 }
