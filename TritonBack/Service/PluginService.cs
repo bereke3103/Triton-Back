@@ -42,7 +42,7 @@ namespace TritonBack.Service
             {
                 Title = model.Title,
                 ShortInfo = model.ShortInfo,
-                //PluginInformations = model.PluginInformations,
+                PluginInformations = model.pluginInformationModels,
             };
 
             await context.pluginModelModels.AddAsync(newPlugin);

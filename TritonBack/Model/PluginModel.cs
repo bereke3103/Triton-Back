@@ -7,7 +7,7 @@ namespace TritonBack.Model
         public int Id { get; set; }
         public string Title { get; set; }
         public string ShortInfo { get; set; }
-        [JsonIgnore]
+      
         public List<PluginInformationModel> PluginInformations { get; set; }
     }
 }

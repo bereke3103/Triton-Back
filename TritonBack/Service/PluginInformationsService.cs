@@ -54,7 +54,7 @@ namespace TritonBack.Service
 
         public async Task<List<PluginInformationModel>> GetPluginInformations()
         {
-            var response = context.pluginInformationModels.Where(p => p.PluginModelId == p.Id).ToList();
+            var response = context.pluginInformationModels.ToList();
 
             if (response.Count == 0)
             {
