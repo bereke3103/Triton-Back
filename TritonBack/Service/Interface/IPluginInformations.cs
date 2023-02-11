@@ -9,5 +9,6 @@ namespace TritonBack.Service.Interface
 
         public Task DeletePluginInformations(int id);
         public Task<List<PluginInformationModel>> GetPluginInformations();
+        public Task<PluginInformationModel> GetPluginInformationsById(int id);
     }
 }

@@ -16,6 +16,10 @@ builder.Services.AddTransient<IChoising, ChoisingService>();
 builder.Services.AddTransient<IPlugin, PluginService>();
 builder.Services.AddTransient<IPluginInformations, PluginInformationsService>();
 builder.Services.AddTransient<IFeedback, FeedbackService>();
+builder.Services.AddControllersWithViews()
+    .AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
 builder.Services.AddDbContext<DataContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetSection("ConntectionString:DefaultConntection").Value);

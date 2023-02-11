@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using TritonBack.Data;
 using TritonBack.Model;
 using TritonBack.Service.Interface;
@@ -14,6 +15,19 @@ namespace TritonBack.Service
             this.context = context;
         }
 
+        public async Task<QuestionsModel> GetQuestionModelById(int id)
+        {
+            var response = await context.questionsModels.FirstOrDefaultAsync(q=> q.Id == id);
+
+            if (response == null)
+            {
+                throw new Exception("Такого вопроса/ответа не существует");
+            }
+            else
+            {
+                return response;
+            }
+        }
         public async Task<QuestionsModel> CreateQuestionModel(QuestionsModel questionModel)
         {
             if(questionModel == null)

@@ -9,6 +9,7 @@ namespace TritonBack.Service.Interface
         public Task<QuestionsModel> UpdateQuestionModel(int id, QuestionsModel questionsModel);
         public Task DeleteQuestionModel(int id);
         public Task<List<QuestionsModel>> GetQuestionModel();
+        public Task<QuestionsModel> GetQuestionModelById(int id);
 
     }
 }

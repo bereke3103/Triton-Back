@@ -31,6 +31,20 @@ namespace TritonBack.Controllers
             }
         }
 
+        [HttpGet("/getPlugin/{id}")]
+
+        public async Task<ActionResult<PluginModel>> GetPluginById (int id)
+        {
+            var response = await plugin.GetPluginById(id);
+            if (response == null)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                return Ok(response);
+            }
+        }
 
         [HttpPost("/createPlugin")]
 

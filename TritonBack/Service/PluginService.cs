@@ -1,4 +1,6 @@
-﻿using TritonBack.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
+using TritonBack.Data;
 using TritonBack.Model;
 using TritonBack.Service.Interface;
 
@@ -42,7 +44,7 @@ namespace TritonBack.Service
             {
                 Title = model.Title,
                 ShortInfo = model.ShortInfo,
-                PluginInformations = model.pluginInformationModels,
+           
             };
 
             await context.pluginModelModels.AddAsync(newPlugin);
@@ -62,10 +64,28 @@ namespace TritonBack.Service
             
         }
 
-        public async Task<List<PluginModel>> GetPlugin()
+        public Task<List<PluginModel>> GetPlugin()
         {
-            var response = context.pluginModelModels.ToList();
+
+            //var posts = context.Posts.Where(p => p.UserId == person.Id).ToList();
+            var response = context.pluginModelModels
+                .Include(p => p.PluginInformations).ToListAsync();
+
             return response;
+        }
+
+        public async Task<PluginModel> GetPluginById(int id)
+        {
+            var response = await context.pluginModelModels.Include(p=> p.PluginInformations).FirstOrDefaultAsync(p=> p.Id == id);
+
+            if (response == null)
+            {
+                throw new Exception("Такого плагина не сущетсвует");
+            }
+            else
+            {
+                return response;
+            }
         }
 
         public async Task<PluginModel> UpdatePlugin(int id, PluginModelDtO model)

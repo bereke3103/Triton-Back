@@ -32,6 +32,21 @@ namespace TritonBack.Controllers
             }
         }
 
+        [HttpGet("/getChoising/{id}")]
+
+        public async Task<ActionResult<ChoisingModel>> GetChoisingById(int id)
+        {
+            var response = await choising.GetChoisingModelById(id);
+
+            if (response == null)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                return Ok(response);
+            }
+        }
 
         [HttpPost("/createChoising")]
 

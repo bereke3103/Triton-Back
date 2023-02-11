@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using System;
 using TritonBack.Data;
 using TritonBack.Model;
@@ -21,12 +22,12 @@ namespace TritonBack.Service
                 throw new Exception("Информация не может быть пустым");
             }
 
-            var pluginId = context.pluginModelModels.FirstOrDefault(p=> p.Id == model.PluginId);
+            //var pluginId = context.pluginModelModels.FirstOrDefault(p=> p.Id == model.PluginId);
 
-            if (pluginId == null)
-            {
-                throw new Exception("Такого плагина не существует");
-            }
+            //if (pluginId == null)
+            //{
+            //    throw new Exception("Такого плагина не существует");
+            //}
 
             var newPluginInformations = new PluginInformationModel()
             {
@@ -41,7 +42,7 @@ namespace TritonBack.Service
 
         public async Task DeletePluginInformations(int id)
         {
-            var findPluginInformationModels = context.pluginInformationModels.FirstOrDefault(i=> i.Id == id && i.Id == i.PluginModelId);
+            var findPluginInformationModels = context.pluginInformationModels.FirstOrDefault(i=> i.Id == id);
 
             if (findPluginInformationModels != null)
             {
@@ -64,9 +65,23 @@ namespace TritonBack.Service
             return response;
         }
 
+        public async Task<PluginInformationModel> GetPluginInformationsById(int id)
+        {
+            var response = await context.pluginInformationModels.FirstOrDefaultAsync(p => p.Id == id);
+
+            if (response == null)
+            {
+                throw new Exception("Такого плагина не существует");
+            }
+            else
+            {
+                return response;
+            }
+        }
+
         public async Task<PluginInformationModel> UpdatePluginInformations(int id, PluginInformationsModelDto model)
         {
-            var findPost = context.pluginInformationModels.FirstOrDefault(p => p.Id == id && p.Id == p.PluginModelId);
+            var findPost = context.pluginInformationModels.FirstOrDefault(p => p.Id == id);
 
             if (findPost != null)
             {

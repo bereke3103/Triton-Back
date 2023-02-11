@@ -30,6 +30,15 @@ namespace TritonBack.Controllers
             }
         }
 
+        [HttpGet("/getFaq/{id}")]
+
+        public async Task<ActionResult<QuestionsModel>> GetQuestionModelById(int id)
+        {
+            var response = await questionAnswer.GetQuestionModelById(id);
+
+            return Ok(response);
+        }
+
 
         [HttpPost("/createFaq")]
 

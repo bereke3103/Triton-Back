@@ -1,4 +1,5 @@
-﻿using TritonBack.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using TritonBack.Data;
 using TritonBack.Model;
 using TritonBack.Service.Interface;
 using static System.Net.Mime.MediaTypeNames;
@@ -45,6 +46,18 @@ namespace TritonBack.Service
         public async Task<List<ChoisingModel>> GetChoisingModel()
         {
             var response = context.choisingModels.ToList();
+            return response;
+        }
+
+        public async Task<ChoisingModel> GetChoisingModelById(int id)
+        {
+            var response = await context.choisingModels.FirstOrDefaultAsync(p => p.Id == id);
+
+            if(response == null)
+            {
+                throw new Exception("Такого поста не существует");
+            }
+
             return response;
         }
 

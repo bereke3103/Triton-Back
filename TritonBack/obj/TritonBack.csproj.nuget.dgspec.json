@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bereke\\Desktop\\siteTritonBack\\TritonBack\\TritonBack\\TritonBack.csproj": {}
+    "C:\\Users\\berek\\OneDrive\\Рабочий стол\\TritonBack\\TritonBack\\TritonBack.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bereke\\Desktop\\siteTritonBack\\TritonBack\\TritonBack\\TritonBack.csproj": {
+    "C:\\Users\\berek\\OneDrive\\Рабочий стол\\TritonBack\\TritonBack\\TritonBack.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bereke\\Desktop\\siteTritonBack\\TritonBack\\TritonBack\\TritonBack.csproj",
+        "projectUniqueName": "C:\\Users\\berek\\OneDrive\\Рабочий стол\\TritonBack\\TritonBack\\TritonBack.csproj",
         "projectName": "TritonBack",
-        "projectPath": "C:\\Users\\Bereke\\Desktop\\siteTritonBack\\TritonBack\\TritonBack\\TritonBack.csproj",
-        "packagesPath": "C:\\Users\\Bereke\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bereke\\Desktop\\siteTritonBack\\TritonBack\\TritonBack\\obj\\",
+        "projectPath": "C:\\Users\\berek\\OneDrive\\Рабочий стол\\TritonBack\\TritonBack\\TritonBack.csproj",
+        "packagesPath": "C:\\Users\\berek\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\berek\\OneDrive\\Рабочий стол\\TritonBack\\TritonBack\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Bereke\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Users\\berek\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +25,6 @@
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -46,6 +44,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.2, )"
@@ -96,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

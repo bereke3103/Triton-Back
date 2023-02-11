@@ -7,7 +7,7 @@ namespace TritonBack.Model
         
         public int Id { get; set; }
         public string ItemInformation { get; set; }
-      
+
         public PluginModel PluginModel { get; set; }
 
         public int PluginModelId { get; set; }

@@ -6,6 +6,5 @@
         
         public string ShortInfo { get; set; }
 
-        public List<PluginInformationModel> pluginInformationModels { get;  }
     }
 }

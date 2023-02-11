@@ -33,6 +33,20 @@ namespace TritonBack.Controllers
             }
         }
 
+        [HttpGet("/getPluginInformations/{id}")]
+
+        public async Task<ActionResult<PluginInformationModel>> GetPluginInformationsById(int id)
+        {
+            var response = await pluginInformations.GetPluginInformationsById(id);
+            if (response == null)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                return Ok(response);
+            }
+        }
 
         [HttpPost("/createPluginInformations")]
 
