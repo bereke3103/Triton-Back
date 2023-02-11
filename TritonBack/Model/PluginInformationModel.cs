@@ -4,8 +4,11 @@ namespace TritonBack.Model
 {
     public class PluginInformationModel
     {
-        
+
         public int Id { get; set; }
+
+        public int Tab { get; set; }
+
         public string ItemInformation { get; set; }
 
         public PluginModel PluginModel { get; set; }

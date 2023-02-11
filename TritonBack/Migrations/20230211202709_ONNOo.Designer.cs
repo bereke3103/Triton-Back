@@ -12,8 +12,8 @@ using TritonBack.Data;
 namespace TritonBack.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230209185311_Initial")]
-    partial class Initial
+    [Migration("20230211202709_ONNOo")]
+    partial class ONNOo
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -91,6 +91,9 @@ namespace TritonBack.Migrations
                         .HasColumnType("text");
 
                     b.Property<int>("PluginModelId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Tab")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
