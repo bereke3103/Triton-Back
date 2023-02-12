@@ -20,5 +20,6 @@ namespace TritonBack.Data
         public DbSet<QuestionsModel> questionsModels { get; set; }
 
         public DbSet<FeedbackModel> feedbacks { get; set; }
+        public DbSet<UserModel> userModels { get; set; }
     }
 }

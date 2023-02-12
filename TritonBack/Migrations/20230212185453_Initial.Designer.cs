@@ -12,8 +12,8 @@ using TritonBack.Data;
 namespace TritonBack.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230211202709_ONNOo")]
-    partial class ONNOo
+    [Migration("20230212185453_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -143,6 +143,27 @@ namespace TritonBack.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("questionsModels");
+                });
+
+            modelBuilder.Entity("TritonBack.Model.UserModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Login")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("userModels");
                 });
 
             modelBuilder.Entity("TritonBack.Model.PluginInformationModel", b =>

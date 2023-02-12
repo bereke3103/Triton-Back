@@ -16,6 +16,7 @@ builder.Services.AddTransient<IChoising, ChoisingService>();
 builder.Services.AddTransient<IPlugin, PluginService>();
 builder.Services.AddTransient<IPluginInformations, PluginInformationsService>();
 builder.Services.AddTransient<IFeedback, FeedbackService>();
+builder.Services.AddTransient<IUser, UserService>();
 builder.Services.AddControllersWithViews()
     .AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore

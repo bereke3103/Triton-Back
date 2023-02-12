@@ -72,6 +72,20 @@ namespace TritonBack.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "userModels",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Login = table.Column<string>(type: "text", nullable: false),
+                    Password = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_userModels", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "pluginInformationModels",
                 columns: table => new
                 {
@@ -112,6 +126,9 @@ namespace TritonBack.Migrations
 
             migrationBuilder.DropTable(
                 name: "questionsModels");
+
+            migrationBuilder.DropTable(
+                name: "userModels");
 
             migrationBuilder.DropTable(
                 name: "pluginModelModels");

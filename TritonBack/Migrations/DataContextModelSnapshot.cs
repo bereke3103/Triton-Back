@@ -142,6 +142,27 @@ namespace TritonBack.Migrations
                     b.ToTable("questionsModels");
                 });
 
+            modelBuilder.Entity("TritonBack.Model.UserModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Login")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("userModels");
+                });
+
             modelBuilder.Entity("TritonBack.Model.PluginInformationModel", b =>
                 {
                     b.HasOne("TritonBack.Model.PluginModel", "PluginModel")
