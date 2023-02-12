@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TritonBack.Model;
 using TritonBack.Service.Interface;
@@ -19,6 +20,7 @@ namespace TritonBack.Controllers
         }
 
         [HttpGet("/getPluginInformations")]
+    
 
         public async Task<ActionResult<List<PluginInformationModel>>> GetPluginInformations()
         {
@@ -49,6 +51,7 @@ namespace TritonBack.Controllers
         }
 
         [HttpPost("/createPluginInformations")]
+
 
         public async Task<ActionResult<PluginInformationModel>> CreatePluginInformations(PluginInformationsModelDto model)
         {

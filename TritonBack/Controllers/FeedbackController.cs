@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TritonBack.Model;
 using TritonBack.Service.Interface;
@@ -16,6 +17,7 @@ namespace TritonBack.Controllers
         }
 
         [HttpPost("/feedbackPost")]
+    
         public async Task<ActionResult<FeedbackModel>> FeedbackPost(FeedbackModel feedback)
         {
             var response = await feedbackPost.PostFeedback(feedback);

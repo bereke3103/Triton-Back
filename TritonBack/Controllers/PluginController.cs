@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TritonBack.Model;
 using TritonBack.Service.Interface;
@@ -18,6 +19,7 @@ namespace TritonBack.Controllers
 
         [HttpGet("/getPlugin")]
 
+
         public async Task<ActionResult<List<PluginModel>>> GetPlugin()
         {
             var response = await plugin.GetPlugin();
@@ -33,6 +35,7 @@ namespace TritonBack.Controllers
 
         [HttpGet("/getPlugin/{id}")]
 
+
         public async Task<ActionResult<PluginModel>> GetPluginById (int id)
         {
             var response = await plugin.GetPluginById(id);
@@ -47,6 +50,7 @@ namespace TritonBack.Controllers
         }
 
         [HttpPost("/createPlugin")]
+
 
         public async Task<ActionResult<PluginModel>> CreatePlugin(PluginModelDtO pluginModel)
         {
@@ -64,6 +68,7 @@ namespace TritonBack.Controllers
 
         [HttpPut("/updatePlugin/{id}")]
 
+
         public async Task<ActionResult<PluginModel>> UpdatePlugin(int id, PluginModelDtO pluginModel)
         {
             var response = await plugin.UpdatePlugin(id, pluginModel);
@@ -79,6 +84,7 @@ namespace TritonBack.Controllers
         }
 
         [HttpDelete("/deletePlugin/{id}")]
+
         public async Task<ActionResult> DeletePlugin(int id)
         {
             await plugin.DeletePlugin(id);

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
+using System.Security.Claims;
 using TritonBack.Data;
 using TritonBack.Model;
 using TritonBack.Service.Interface;
@@ -9,10 +10,12 @@ namespace TritonBack.Service
     public class PluginService : IPlugin
     {
         private readonly DataContext context;
+        private readonly IHttpContextAccessor httpContext;
 
-        public PluginService(DataContext context)
+        public PluginService(DataContext context, IHttpContextAccessor httpContext)
         {
             this.context = context;
+            this.httpContext = httpContext;
         }
         public async Task<PluginModel> CreatePlugin(PluginModelDtO model)
         {
@@ -66,8 +69,9 @@ namespace TritonBack.Service
 
         public Task<List<PluginModel>> GetPlugin()
         {
-
+         
             //var posts = context.Posts.Where(p => p.UserId == person.Id).ToList();
+
             var response = context.pluginModelModels
                 .Include(p => p.PluginInformations).ToListAsync();
 
