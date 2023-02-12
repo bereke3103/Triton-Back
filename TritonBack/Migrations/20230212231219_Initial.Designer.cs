@@ -12,7 +12,7 @@ using TritonBack.Data;
 namespace TritonBack.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230212185453_Initial")]
+    [Migration("20230212231219_Initial")]
     partial class Initial
     {
         /// <inheritdoc />

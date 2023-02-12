@@ -31,6 +31,7 @@ namespace TritonBack.Service
 
             var newPluginInformations = new PluginInformationModel()
             {
+                Tab = model.Tab,
            
                 PluginModelId = model.PluginId,
                 ItemInformation= model.ItemInformations,
