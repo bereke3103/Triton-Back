@@ -47,7 +47,11 @@ namespace TritonBack.Service
             var newQuestionAnswer = new QuestionsModel()
             {
                 Question = questionModel.Question,
+                QuestionKZ = questionModel.QuestionKZ,
+                QuestionENG = questionModel.QuestionENG,
                 Answer = questionModel.Answer,
+                AnswerKZ = questionModel.AnswerKZ,
+                AnswerENG = questionModel.AnswerENG,
             };
 
             await context.questionsModels.AddAsync(newQuestionAnswer);
@@ -83,7 +87,11 @@ namespace TritonBack.Service
             } else 
             {
                 findQuestionAnswer.Answer = questionsModel.Answer;
+                findQuestionAnswer.AnswerKZ = questionsModel.AnswerKZ;
+                findQuestionAnswer.AnswerENG = questionsModel.AnswerENG;
                 findQuestionAnswer.Question = questionsModel.Question;
+                findQuestionAnswer.QuestionKZ = questionsModel.QuestionKZ;
+                findQuestionAnswer.QuestionENG = questionsModel.QuestionENG;
                 context.Update(findQuestionAnswer);
                 context.SaveChanges();
                 return findQuestionAnswer;

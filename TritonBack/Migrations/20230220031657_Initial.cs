@@ -19,7 +19,11 @@ namespace TritonBack.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Title = table.Column<string>(type: "text", nullable: false),
-                    Text = table.Column<string>(type: "text", nullable: false)
+                    TitleKZ = table.Column<string>(type: "text", nullable: false),
+                    TitleENG = table.Column<string>(type: "text", nullable: false),
+                    Text = table.Column<string>(type: "text", nullable: false),
+                    TextKZ = table.Column<string>(type: "text", nullable: false),
+                    TextENG = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -50,7 +54,12 @@ namespace TritonBack.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Title = table.Column<string>(type: "text", nullable: false),
-                    ShortInfo = table.Column<string>(type: "text", nullable: false)
+                    TitleKZ = table.Column<string>(type: "text", nullable: false),
+                    TitleENG = table.Column<string>(type: "text", nullable: false),
+                    ShortInfo = table.Column<string>(type: "text", nullable: false),
+                    ShortInfoKZ = table.Column<string>(type: "text", nullable: false),
+                    ShortInfoENG = table.Column<string>(type: "text", nullable: false),
+                    NameFile = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -64,7 +73,11 @@ namespace TritonBack.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Question = table.Column<string>(type: "text", nullable: false),
-                    Answer = table.Column<string>(type: "text", nullable: false)
+                    QuestionKZ = table.Column<string>(type: "text", nullable: false),
+                    QuestionENG = table.Column<string>(type: "text", nullable: false),
+                    Answer = table.Column<string>(type: "text", nullable: false),
+                    AnswerKZ = table.Column<string>(type: "text", nullable: false),
+                    AnswerENG = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -93,6 +106,8 @@ namespace TritonBack.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Tab = table.Column<int>(type: "integer", nullable: false),
                     ItemInformation = table.Column<string>(type: "text", nullable: false),
+                    ItemInformationKZ = table.Column<string>(type: "text", nullable: false),
+                    ItemInformationENG = table.Column<string>(type: "text", nullable: false),
                     PluginModelId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>

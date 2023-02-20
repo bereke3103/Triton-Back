@@ -98,3 +98,4 @@ C:\Users\berek\OneDrive\Рабочий стол\TritonBack\TritonBack\bin\Debug\
 C:\Users\berek\OneDrive\Рабочий стол\TritonBack\TritonBack\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
 C:\Users\berek\OneDrive\Рабочий стол\TritonBack\TritonBack\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\berek\OneDrive\Рабочий стол\TritonBack\TritonBack\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\berek\OneDrive\Рабочий стол\TritonBack\TritonBack\bin\Debug\net7.0\TritonBack.staticwebassets.runtime.json

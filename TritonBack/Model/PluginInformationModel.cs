@@ -10,6 +10,8 @@ namespace TritonBack.Model
         public int Tab { get; set; }
 
         public string ItemInformation { get; set; }
+        public string ItemInformationKZ { get; set; }
+        public string ItemInformationENG { get; set; }
 
         public PluginModel PluginModel { get; set; }
 

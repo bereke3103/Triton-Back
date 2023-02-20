@@ -35,7 +35,11 @@ namespace TritonBack.Service
             var newChoisingModel = new ChoisingModel()
             {
                 Title = choising.Title,
+                TitleKZ= choising.TitleKZ,
+                TitleENG = choising.TitleENG,
                 Text = choising.Text,
+                TextKZ = choising.TextKZ,
+                TextENG = choising.TextENG,
             };
 
             await context.choisingModels.AddAsync(newChoisingModel);
@@ -72,7 +76,11 @@ namespace TritonBack.Service
             else
             {
                 findChoising.Title = choisingModel.Title;
+                findChoising.TitleKZ = choisingModel.TitleKZ;
+                findChoising.TitleENG = choisingModel.TitleENG;
                 findChoising.Text = choisingModel.Text;
+                findChoising.TextKZ = choisingModel.TextKZ;
+                findChoising.TextENG = choisingModel.TextENG;
                 context.Update(findChoising);
                 context.SaveChanges();
                 return findChoising;

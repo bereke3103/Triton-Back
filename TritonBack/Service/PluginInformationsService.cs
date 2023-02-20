@@ -35,6 +35,8 @@ namespace TritonBack.Service
            
                 PluginModelId = model.PluginId,
                 ItemInformation= model.ItemInformations,
+                ItemInformationKZ= model.ItemInformationsKZ,
+                ItemInformationENG= model.ItemInformationsENG,
             };
 
             context.pluginInformationModels.Add(newPluginInformations);
@@ -88,6 +90,8 @@ namespace TritonBack.Service
             if (findPost != null)
             {
                 findPost.ItemInformation = model.ItemInformations;
+                findPost.ItemInformationKZ = model.ItemInformationsKZ;
+                findPost.ItemInformationENG = model.ItemInformationsENG;
                 context.Update(findPost);
                 context.SaveChanges();
                 return findPost;

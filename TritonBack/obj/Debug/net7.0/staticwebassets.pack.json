@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\berek\\OneDrive\\Рабочий стол\\TritonBack\\TritonBack\\wwwroot\\Images\\picme.jpg",
+      "PackagePath": "staticwebassets\\Images\\picme.jpg"
+    },
+    {
+      "Id": "C:\\Users\\berek\\OneDrive\\Рабочий стол\\TritonBack\\TritonBack\\wwwroot\\Images\\контакты.jpg",
+      "PackagePath": "staticwebassets\\Images\\контакты.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.TritonBack.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.TritonBack.props",
+      "PackagePath": "build\\TritonBack.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.TritonBack.props",
+      "PackagePath": "buildMultiTargeting\\TritonBack.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.TritonBack.props",
+      "PackagePath": "buildTransitive\\TritonBack.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

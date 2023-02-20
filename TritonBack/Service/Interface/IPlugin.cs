@@ -10,5 +10,6 @@ namespace TritonBack.Service.Interface
         public Task DeletePlugin(int id);
         public Task<List<PluginModel>> GetPlugin();
         public Task<PluginModel> GetPluginById(int id);
+        public string UploadFile(IFormFile model);
     }
 }

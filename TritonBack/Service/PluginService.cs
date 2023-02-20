@@ -11,49 +11,74 @@ namespace TritonBack.Service
     {
         private readonly DataContext context;
         private readonly IHttpContextAccessor httpContext;
+        private readonly IWebHostEnvironment environment;
 
-        public PluginService(DataContext context, IHttpContextAccessor httpContext)
+   
+
+        public PluginService(DataContext context, IHttpContextAccessor httpContext, IWebHostEnvironment environment)
         {
             this.context = context;
             this.httpContext = httpContext;
+            this.environment = environment;
         }
         public async Task<PluginModel> CreatePlugin(PluginModelDtO model)
         {
 
-
-            //if (model == null)
-            //{
-            //    throw new Exception("Описание не может быть пустым");
-            //}
-            if (model.Title == string.Empty)
-            {
-                throw new Exception("Заголовок не может быть пустым");
-            }
-
-            if (model.ShortInfo == string.Empty)
-            {
-                throw new Exception("Информация должна быть заполнена!");
-            }
-
-            //foreach (var item in model.PluginInformations)
-            //{
-            //    if (item.ItemInformation == string.Empty)
-            //    {
-            //        throw new Exception("Это поле должно быть заполнено");
-            //    }
-            //}
-
             var newPlugin = new PluginModel()
             {
                 Title = model.Title,
+                TitleKZ = model.TitleKZ,
+                TitleENG = model.TitleENG,
                 ShortInfo = model.ShortInfo,
+                ShortInfoKZ = model.ShortInfoKZ,
+                NameFile =  UploadFile(model.File),
+                ShortInfoENG = model.ShortInfoENG,
            
             };
 
+           
+
+        
             await context.pluginModelModels.AddAsync(newPlugin);
             await context.SaveChangesAsync();
             return newPlugin;
         }
+
+
+
+        public string UploadFile(IFormFile model)
+        {
+            
+
+            if (model.Length > 0)
+            {
+                try
+                {
+                    if (!Directory.Exists(environment.WebRootPath + "\\Images\\"))
+                    {
+                        Directory.CreateDirectory(environment.WebRootPath + "\\Images\\");
+                    }
+
+                    using (FileStream fileStream = System.IO.File.Create(environment.WebRootPath + "\\Images\\" + model.FileName))
+                    {
+                        model.CopyTo(fileStream);
+                        fileStream.Flush();
+                        return "\\Images\\" + model.FileName;
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    return ex.ToString();
+                }
+            }
+            else
+            {
+                throw new Exception("Upload Files");
+            }
+        }
+
+      
 
         public async Task DeletePlugin(int id)
         {
@@ -69,9 +94,6 @@ namespace TritonBack.Service
 
         public Task<List<PluginModel>> GetPlugin()
         {
-         
-            //var posts = context.Posts.Where(p => p.UserId == person.Id).ToList();
-
             var response = context.pluginModelModels
                 .Include(p => p.PluginInformations).ToListAsync();
 
@@ -103,7 +125,11 @@ namespace TritonBack.Service
             else
             {
                 finPlugin.Title = model.Title;
+                finPlugin.TitleKZ = model.TitleKZ;
+                finPlugin.TitleENG = model.TitleENG;
                 finPlugin.ShortInfo = model.ShortInfo;
+                finPlugin.ShortInfoKZ = model.ShortInfoKZ;
+                finPlugin.ShortInfoENG = model.ShortInfoENG;
                 context.Update(finPlugin);
                 context.SaveChanges();
                 return finPlugin;

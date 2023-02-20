@@ -1,11 +1,54 @@
 {
   "Version": 1,
-  "Hash": "SpRIIIK0kNME/xzuOsbYY/UGYfH1QskHlQEYx2wa+aU=",
+  "Hash": "uZNO7lh5iLiak6vANB91UiUwaP8Lji/6Q+VVJ830seE=",
   "Source": "TritonBack",
   "BasePath": "_content/TritonBack",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "TritonBack\\wwwroot",
+      "Source": "TritonBack",
+      "ContentRoot": "C:\\Users\\berek\\OneDrive\\Рабочий стол\\TritonBack\\TritonBack\\wwwroot\\",
+      "BasePath": "_content/TritonBack",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\berek\\OneDrive\\Рабочий стол\\TritonBack\\TritonBack\\wwwroot\\Images\\picme.jpg",
+      "SourceId": "TritonBack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\berek\\OneDrive\\Рабочий стол\\TritonBack\\TritonBack\\wwwroot\\",
+      "BasePath": "_content/TritonBack",
+      "RelativePath": "Images/picme.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\picme.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\berek\\OneDrive\\Рабочий стол\\TritonBack\\TritonBack\\wwwroot\\Images\\контакты.jpg",
+      "SourceId": "TritonBack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\berek\\OneDrive\\Рабочий стол\\TritonBack\\TritonBack\\wwwroot\\",
+      "BasePath": "_content/TritonBack",
+      "RelativePath": "Images/контакты.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\контакты.jpg"
+    }
+  ]
 }

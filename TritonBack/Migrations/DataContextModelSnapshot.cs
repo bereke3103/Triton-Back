@@ -34,7 +34,23 @@ namespace TritonBack.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("TextENG")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("TextKZ")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("TitleENG")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("TitleKZ")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -87,6 +103,14 @@ namespace TritonBack.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("ItemInformationENG")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ItemInformationKZ")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<int>("PluginModelId")
                         .HasColumnType("integer");
 
@@ -108,11 +132,31 @@ namespace TritonBack.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("NameFile")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("ShortInfo")
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("ShortInfoENG")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ShortInfoKZ")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("TitleENG")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("TitleKZ")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -133,7 +177,23 @@ namespace TritonBack.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("AnswerENG")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("AnswerKZ")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Question")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("QuestionENG")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("QuestionKZ")
                         .IsRequired()
                         .HasColumnType("text");
 

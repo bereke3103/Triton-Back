@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using TritonBack.Model;
 using TritonBack.Service.Interface;
 
@@ -11,32 +9,31 @@ namespace TritonBack.Controllers
     public class PluginController : ControllerBase
     {
         private readonly IPlugin plugin;
+        private readonly IWebHostEnvironment _environment;
 
-        public PluginController(IPlugin plugin)
+        public PluginController(IPlugin plugin, IWebHostEnvironment environment)
         {
             this.plugin = plugin;
+            _environment = environment;
         }
 
+
+
+
         [HttpGet("/getPlugin")]
-
-
         public async Task<ActionResult<List<PluginModel>>> GetPlugin()
         {
+
+
             var response = await plugin.GetPlugin();
-            if (response == null)
-            {
-                return BadRequest();
-            }
-            else
-            {
-                return Ok(response);
-            }
+
+            return response;
         }
 
         [HttpGet("/getPlugin/{id}")]
 
 
-        public async Task<ActionResult<PluginModel>> GetPluginById (int id)
+        public async Task<ActionResult<PluginModel>> GetPluginById(int id)
         {
             var response = await plugin.GetPluginById(id);
             if (response == null)
@@ -49,12 +46,19 @@ namespace TritonBack.Controllers
             }
         }
 
+
+
         [HttpPost("/createPlugin")]
 
 
-        public async Task<ActionResult<PluginModel>> CreatePlugin(PluginModelDtO pluginModel)
+        public async Task<ActionResult<PluginModel>> CreatePlugin([FromForm]PluginModelDtO pluginModel)
         {
+
+
             var response = await plugin.CreatePlugin(pluginModel);
+
+            //var img = await PostImg(pluginModel.ImgFile);
+
 
             if (response == null)
             {
@@ -65,6 +69,8 @@ namespace TritonBack.Controllers
                 return Ok(response);
             }
         }
+
+
 
         [HttpPut("/updatePlugin/{id}")]
 
@@ -91,5 +97,7 @@ namespace TritonBack.Controllers
 
             return Ok();
         }
+
+
     }
 }
